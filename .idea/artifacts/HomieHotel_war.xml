@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HomieHotel:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HomieHotel</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="HomieHotel-v1.0.war">
+      <element id="artifact" artifact-name="HomieHotel:war exploded" />
+    </root>
+  </artifact>
+</component>

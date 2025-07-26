@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial; background: #f7f7f7; padding: 20px; }
+        .box {
+            background: #fff; padding: 30px;
+            border: 1px solid #ddd; border-radius: 8px;
+            max-width: 600px; margin: auto;
+        }
+        .title { font-size: 24px; color: #28a745; font-weight: bold; }
+        .qr img { margin-top: 20px; width: 200px; height: auto; }
+        .room-img { width: 100%; max-width: 100%; border-radius: 8px; margin-bottom: 15px; }
+        .room-info p { margin: 4px 0; }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; color: #333;">
+<div class="box">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
+    <div class="title">✅ Reservation Confirmation - HomieHotel</div>
+    <p>Dear <strong>{{name}}</strong></p>
+    <p>Thank you for choosing our service. We sincerely appreciate your trust and support.  
+Your booking has been confirmed with the following details:</p>
+    <p>**Your booking is confirmed <strong>{{room}}</strong></P> 
+    <p>**Check-in from <strong>{{checkin}}</strong> Check-out to <strong>{{checkout}}</strong></p>
+    <p><strong>**Room Type:</strong> {{roomType}}</p>
+    <p><strong>**Floor:</strong> {{roomfloat}}</p>
+    <p><strong>**Total amount: </strong>{{amount}} $</p>
+    <div class="qr">
+        <p>Scan the QR code below to confirm your booking or view the full details:</p>
+        <p style="text-align: center;">
+        <img src="data:image/png;base64,{{qrcode}}" alt="QR Code" />
+        </p>
+        
+    </div>
+    <img src="{{roomImage}}" alt="Ảnh phòng" class="room-img" />
+    <p>If you have any questions or need further assistance, please do not hesitate to contact us at <strong style=color:red>Hotline:0123 456 789</strong>.</p>
+        <p>We look forward to welcoming you soon.</p>
+    <p>Warm regards,</p>
+        <p><strong>[HOMIE HOTEL]</strong><br>
+        [273 Nguyen Gia Tri, Ward 25, Binh Thanh District, HCMC.]<br>
+        [+84 123 456 789] | [HomieHotel@mail.com] | <a href="[Website URL]" style="color: #0073e6;">[HomieHotel.vn]</a></p>
+</div>
+</div>
+</body>
+</html>
