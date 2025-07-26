@@ -2,7 +2,7 @@ name: Build ASP.NET MVC project
 
 on:
   push:
-    branches: [ "main" ]  
+    branches: [ "master" ]  
 
 jobs:
   build:
