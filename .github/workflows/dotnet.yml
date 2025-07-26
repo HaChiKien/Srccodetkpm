@@ -2,7 +2,9 @@ name: Build ASP.NET MVC project
 
 on:
   push:
-    branches: [ "master" ]  
+    branches: [ "master" ]   
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -15,14 +17,14 @@ jobs:
     - name: Cài .NET SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '6.0.x'  
+        dotnet-version: '6.0.x'   
 
-    - name: Khôi phục các thư viện cần thiết
-      run: dotnet restore
+    - name: Khôi phục thư viện
+      run: dotnet restore HomieHotel.sln   
 
-    - name: Biên dịch (build) project
-      run: dotnet build --no-restore --configuration Release
+    - name: Build project
+      run: dotnet build HomieHotel.sln --no-restore --configuration Release
 
     - name: Chạy test (nếu có)
-      run: dotnet test --no-build
+      run: dotnet test HomieHotel.sln --no-build
       continue-on-error: true
