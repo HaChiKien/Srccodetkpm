@@ -1,0 +1,28 @@
+name: Build ASP.NET MVC project
+
+on:
+  push:
+    branches: [ "main" ]  
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Lấy mã nguồn từ GitHub
+      uses: actions/checkout@v3
+
+    - name: Cài .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'  
+
+    - name: Khôi phục các thư viện cần thiết
+      run: dotnet restore
+
+    - name: Biên dịch (build) project
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Chạy test (nếu có)
+      run: dotnet test --no-build
+      continue-on-error: true
